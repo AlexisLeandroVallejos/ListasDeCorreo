@@ -1,9 +1,15 @@
 package modeloObservador;
 
 public class Mensaje {
-	private String email;
-	private String titulo;
-	private String texto;
+	private final String email;
+	private final String titulo;
+	private final String texto;
+	
+	public Mensaje(String telefono, String texto) {
+		this.email = telefono;
+		this.texto = texto;
+		this.titulo = null;
+	}
 	
 	public Mensaje(String email, String titulo, String texto) {
 		this.email = email;
@@ -15,23 +21,11 @@ public class Mensaje {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getTitulo() {
 		return titulo;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
 	public String getTexto() {
 		return texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
 	}
 }

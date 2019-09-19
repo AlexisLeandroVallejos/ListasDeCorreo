@@ -7,20 +7,29 @@ public class UsuarioConcreto implements Usuario {
 	
 	private List<String> emails = new ArrayList<String>();
 	private String emailPrincipal;
-	private ListaDeCorreo listaDeCorreo;
-	
+	private Mensaje mensaje;
+	private int contador = 0;
+
 	public UsuarioConcreto(String emailPrincipal) {
 		this.emailPrincipal = emailPrincipal;
 	}
 	
 	@Override
-	public Mensaje actualizar() {
-		return listaDeCorreo.getMensaje();
+	public void actualizar(Mensaje mensaje) {
+		this.mensaje = mensaje;
+		contador++;
+	}
+	
+	public Mensaje getMensaje() {
+		return mensaje;
 	}
 
-	@Override
-	public void setListaDeCorreo(ListaDeCorreo lista) {
-		this.listaDeCorreo = lista;
+	public int getContador() {
+		return contador;
+	}
+
+	public void setContador(int contador) {
+		this.contador = contador;
 	}
 
 }
