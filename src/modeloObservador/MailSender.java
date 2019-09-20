@@ -18,15 +18,9 @@ public class MailSender extends Sender {
 			throw new ListaDeCorreoCerradaException();
 		}
 		if(!listaEsRestringida) {
-			if(mensajeContienePalabrasPeligrosas(mensaje)) {
-				administrador.avisoDePalabra();
-			}
+			super.notificarUsuarios(mensaje);
 			usuarios.forEach(usuario -> usuario.actualizar(mensaje));
 		}
-	}
-
-	public boolean mensajeContienePalabrasPeligrosas(Mensaje mensaje) {
-		return mensaje.getTexto().contains(filtroDePalabras.stream().toString());
 	}
 
 	@Override

@@ -4,6 +4,7 @@ public class Mensaje {
 	private final String email;
 	private final String titulo;
 	private final String texto;
+	private boolean permitidoSinSpam = true;
 	
 	public Mensaje(String telefono, String texto) {
 		this.email = telefono;
@@ -27,5 +28,13 @@ public class Mensaje {
 
 	public String getTexto() {
 		return texto;
+	}
+
+	public boolean isPermitidoSinSpam() {
+		return permitidoSinSpam;
+	}
+
+	public void setPermitidoSinSpam(boolean permitidoSinSpam) {
+		this.permitidoSinSpam = permitidoSinSpam;
 	}
 }

@@ -22,6 +22,7 @@ public class PhoneVoiceSender extends Sender {
 	}
 	
 	public void sendMessage(String telefono, String texto) {
+		super.notificarUsuarios(new Mensaje(telefono, texto));
 		usuarios.forEach(usuario -> usuario.actualizar(new Mensaje(telefono, texto)));
 	}
 
